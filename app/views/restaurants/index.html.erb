@@ -1,0 +1,24 @@
+<h1>Voici la liste des restaurants :</h1>
+
+<%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-primary" %>
+
+<% @restaurants.each do |restaurant| %>
+  <div>
+
+    <p>****************************************************</p>
+
+    <h2><%= restaurant.name %></h2>
+
+    <ul>
+      <% restaurant.reviews.each do |review| %>
+        <li><%= review.rating %> => <%= review.content %></li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Delete", restaurant_path(restaurant), method: :delete, class: "btn btn-primary" %>
+
+    <%= link_to "See", restaurant_path(restaurant), class: "btn btn-primary" %>
+
+  </div>
+
+<% end %>
