@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_filter :authorize
   before_action :set_restaurant, only: [:new, :create]
 
   def new

@@ -1,0 +1,15 @@
+<div class="login-card">
+  <h1 class="text-center">Login</h1>
+
+  <%= form_tag '/login' do %>
+    <div class="form-group input-card">
+      <div>Email:</div>
+      <div><%= text_field_tag :email %></div>
+      <div>Password:</div>
+      <div><%= password_field_tag :password %></div>
+      <div><%= submit_tag "Submit" %></div>
+    </div>
+  <% end %>
+
+  <%= link_to "SignUp", signup_path, class: "btn btn-primary" %>
+</div>
